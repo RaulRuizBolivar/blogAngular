@@ -1,0 +1,70 @@
+.cardTravel {
+    background-position: top center;
+    background-size: cover;
+    height: 95%;
+    width: 95%;
+    margin: auto auto;
+    overflow: hidden;
+    transition: .3s;
+}
+figure:hover .cardTravel{
+    width: 100%;
+    height: 100%;
+}
+
+figure{
+    transition: .3s;
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 10px;
+}
+figure:hover{
+    padding: 0;
+}
+  figure figcaption{
+    color: white;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-bottom: 5px;
+  }
+  figure button{
+   border: none;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primaryColor);
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+     margin-left: 20px;
+     transition: 1s;
+  }
+  
+  figure a:hover{
+    background-color: darkslateblue;
+  }
+  
+
+  .info{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+figure:hover .info{
+    transition: .3s;
+    transition-delay: .1s;
+    background: rgba(0,0,0,.2);
+  }
+  figcaption{
+    font-weight: 700;
+    font-size: 1.8em;
+    letter-spacing: .1em;
+  }

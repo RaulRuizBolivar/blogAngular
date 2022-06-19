@@ -13,10 +13,6 @@ body{
     font-weight: 300 !important;
     background-color: var(--colorTerciario) !important;
 }
-header figure{
-    max-width: 80px;
-    margin: 0;
-}
 img{
     display: block;
     width: 100%;

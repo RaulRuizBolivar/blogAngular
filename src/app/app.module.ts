@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { PathErrorComponent } from './components/path-error/path-error.component';
 import { CardComponent } from './components/card/card.component';
+import { PostComponent } from './components/post/post.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CardComponent } from './components/card/card.component';
     FooterComponent,
     BlogComponent,
     PathErrorComponent,
-    CardComponent
+    CardComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

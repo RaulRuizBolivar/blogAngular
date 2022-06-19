@@ -1,8 +1,7 @@
-<figure [routerLink]="['/post/id']">
-    <div class="cardTravel"
-        style="background-image: url(https://wp.themedemo.org/WP01/WP001/wp-content/uploads/2022/04/activity-02.jpg) ;">
+<figure [routerLink]="['/post/'+post.id]">
+    <div class="cardTravel" style="background-image: url({{post.imagen}}) ;">
     </div>
     <div class="info">
-        <figcaption>Viaje a Suiza</figcaption>
+        <figcaption>{{post.titulo}}</figcaption>
     </div>
 </figure>

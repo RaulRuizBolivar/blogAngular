@@ -13,4 +13,7 @@ export class PostService {
   getAll (): Post[] {
     return this.arrPosts
   }
+  getById ( id: string ): Post | any {
+    return this.arrPosts.find( post => post.id === parseInt( id ) )
+  }
 }

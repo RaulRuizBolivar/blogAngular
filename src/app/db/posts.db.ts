@@ -8,7 +8,7 @@ export const POSTS: Post[] = [
         autor: 'Raul',
         imagen: 'https://wp.themedemo.org/WP01/WP001/wp-content/uploads/2022/04/activity-02.jpg',
         fecha: '28/2/21',
-        categoria: { id: 1, titulo: 'rural' }
+        categorias: [ { id: 1, titulo: 'rural' } ]
     },
     {
         id: 2,
@@ -17,6 +17,6 @@ export const POSTS: Post[] = [
         autor: 'Raul',
         imagen: 'https://wp.themedemo.org/WP01/WP001/wp-content/uploads/2022/04/activity-05.jpg',
         fecha: '28/2/21',
-        categoria: { id: 1, titulo: 'montaña' }
+        categorias: [ { id: 1, titulo: 'montaña' } ]
     },
 ]

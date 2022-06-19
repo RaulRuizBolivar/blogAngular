@@ -20,6 +20,9 @@
                         Categorias
                     </a>
                     <ul class="dropdown-menu border-0" aria-labelledby="categorias">
+                        <li>
+                            <a role="button" class="dropdown-item ps-4" [routerLink]="['/categoria','0']">Todas</a>
+                        </li>
                         <li *ngFor="let categoria of categorias">
                             <a role="button" class="dropdown-item ps-4"
                                 [routerLink]="['/categoria' , categoria.id]">{{categoria.titulo}}</a>

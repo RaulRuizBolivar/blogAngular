@@ -16,4 +16,13 @@ export class PostService {
   getById ( id: string ): Post | any {
     return this.arrPosts.find( post => post.id === parseInt( id ) )
   }
+  getAllByCategory ( categoriaId: string ) {
+    let postReturn: Post[] | undefined = []
+    this.arrPosts.forEach( post => post.categorias.forEach( categoria => {
+      if ( parseInt( categoriaId ) === categoria ) {
+        postReturn?.push( post )
+      }
+    } ) )
+    return postReturn
+  }
 }

@@ -7,6 +7,7 @@ import { Category } from '../interfaces/category';
 } )
 export class CategoriasService {
   private arrCategorias: Category[] = []
+  private id: number = 3
   constructor () {
     this.arrCategorias = CATEGORIAS
   }
@@ -19,5 +20,22 @@ export class CategoriasService {
       categoriasReturn.push( this.arrCategorias.filter( categoria => categoria.id === id )[ 0 ] )
     }
     return categoriasReturn
+  }
+  addNoFiltered ( categorias: string[] ): void {
+    categorias = [ ... new Set( categorias ) ]
+    console.log( this.arrCategorias )
+    if ( this.arrCategorias.filter( cat => categorias.includes( cat.titulo ) ) ) {
+      //no hay coincidencias con las categorias existentes
+      console.log( this.arrCategorias )
+      categorias.forEach( cat => {
+        let categoria: Category = { titulo: cat, id: this.id }
+        this.arrCategorias.push( categoria )
+        this.id++
+      }
+      )
+    } else {
+      //Si hay alguna categoria que se llama igual
+    }
+
   }
 }

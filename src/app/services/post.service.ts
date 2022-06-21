@@ -31,8 +31,6 @@ export class PostService {
   }
   addPost ( post: any ) {
     post.id = this.id
-    post.categoria = post.categoria.split( ',' )
-    post.categoria = post.categoria.map( ( categoria: string ) => categoria.trim() )
     this.categoriasService.addNoFiltered( post.categoria )
     this.arrPosts.push( post )
     this.id++

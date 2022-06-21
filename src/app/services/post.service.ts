@@ -14,6 +14,9 @@ export class PostService {
   ) {
     this.arrPosts = POSTS
   }
+  ngDoCheck () {
+    this.arrPosts = POSTS
+  }
   getAll (): Post[] {
     return this.arrPosts
   }
@@ -31,8 +34,10 @@ export class PostService {
   }
   addPost ( post: any ) {
     post.id = this.id
-    this.categoriasService.addNoFiltered( post.categoria )
+    post.categorias = this.categoriasService.addNoFiltered( post.categoriaString )
+    delete post.categoriaString
     this.arrPosts.push( post )
+    console.log( this.arrPosts )
     this.id++
   }
 }

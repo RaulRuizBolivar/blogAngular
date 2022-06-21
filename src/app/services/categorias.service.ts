@@ -14,6 +14,9 @@ export class CategoriasService {
   getAll () {
     return this.arrCategorias
   }
+  getById ( id: number ) {
+    return this.arrCategorias.find( categoria => categoria.id === id )
+  }
   getAllById ( arrId: number[] ): Category[] | undefined {
     let categoriasReturn: Category[] | undefined = []
     for ( let id of arrId ) {
@@ -21,23 +24,27 @@ export class CategoriasService {
     }
     return categoriasReturn
   }
-  addNoFiltered ( categoriasString: string ): void {
+  addNoFiltered ( categoriasString: string ): number[] {
+    let categoriasReturn: number[] = []
     let categorias: string[] = categoriasString.split( ',' )
     categorias = categorias.map( ( categoria: string ) => categoria.trim() )
     categorias = [ ... new Set( categorias ) ]
-    console.log( this.arrCategorias )
-    if ( !this.arrCategorias.some( cat => categorias.find( categoria => categoria === cat.titulo ) ) ) {
-      //no hay coincidencias con las categorias existentes
-      console.log( this.arrCategorias )
-      categorias.forEach( cat => {
-        let categoria: Category = { id: this.id, titulo: cat }
-        this.arrCategorias.push( categoria )
+    console.log( categorias )
+    //Tengo que cambiar la estrategia y mandar a diferentes funciones dependiendo de cada iteracion de un bucle con cada categoria de categorias
+    categorias.forEach( categoria => {
+      console.log( categoria )
+      if ( !this.arrCategorias.some( cat => categoria.toLowerCase() === cat.titulo.toLowerCase() ) ) {
+        //no existe la categoria
+        let newCategoria: Category = { id: this.id, titulo: categoria }
+        this.arrCategorias.push( newCategoria )
+        categoriasReturn.push( this.id )
         this.id++
+      } else {
+        //existe la categoria
+        let categoriaExistente: number = this.arrCategorias.findIndex( cat => cat.titulo === categoria )
+        categoriasReturn.push( this.arrCategorias[ categoriaExistente ].id )
       }
-      )
-    } else {
-      //Si hay alguna categoria que se llama igual
-    }
-
+    } )
+    return categoriasReturn
   }
 }

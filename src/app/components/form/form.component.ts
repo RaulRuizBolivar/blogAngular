@@ -18,7 +18,7 @@ export class FormComponent implements OnInit {
         autor: new FormControl( '', [] ),
         imagen: new FormControl( '', [] ),
         fecha: new FormControl( '', [] ),
-        categoria: new FormControl( '', [] ),
+        categoriaString: new FormControl( '', [] ),
         texto: new FormControl( '', [] ),
       }, []
     )

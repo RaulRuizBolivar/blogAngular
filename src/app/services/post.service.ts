@@ -7,6 +7,7 @@ import { Post } from '../interfaces/post';
 } )
 export class PostService {
   private arrPosts: Post[] = []
+  private id: number = 3
   constructor () {
     this.arrPosts = POSTS
   }
@@ -24,5 +25,10 @@ export class PostService {
       }
     } ) )
     return postReturn
+  }
+  addPost ( post: any ) {
+    post.id = this.id
+    this.arrPosts.push( post )
+    this.id++
   }
 }

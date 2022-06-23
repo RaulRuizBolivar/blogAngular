@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 
 @Component( {
@@ -10,7 +11,8 @@ import { PostService } from 'src/app/services/post.service';
 export class FormComponent implements OnInit {
   newPost: FormGroup
   constructor (
-    private postsService: PostService
+    private postsService: PostService,
+    private router: Router
   ) {
     this.newPost = new FormGroup(
       {
@@ -28,5 +30,6 @@ export class FormComponent implements OnInit {
   }
   getDataForm () {
     this.postsService.addPost( this.newPost.value )
+    this.router.navigate( [ '/home' ] )
   }
 }

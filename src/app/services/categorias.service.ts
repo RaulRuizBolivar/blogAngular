@@ -29,10 +29,8 @@ export class CategoriasService {
     let categorias: string[] = categoriasString.split( ',' )
     categorias = categorias.map( ( categoria: string ) => categoria.trim() )
     categorias = [ ... new Set( categorias ) ]
-    console.log( categorias )
     //Tengo que cambiar la estrategia y mandar a diferentes funciones dependiendo de cada iteracion de un bucle con cada categoria de categorias
     categorias.forEach( categoria => {
-      console.log( categoria )
       if ( !this.arrCategorias.some( cat => categoria.toLowerCase() === cat.titulo.toLowerCase() ) ) {
         //no existe la categoria
         let newCategoria: Category = { id: this.id, titulo: categoria }
@@ -42,6 +40,7 @@ export class CategoriasService {
       } else {
         //existe la categoria
         let categoriaExistente: number = this.arrCategorias.findIndex( cat => cat.titulo === categoria )
+        console.log( this.arrCategorias[ categoriaExistente ].id )
         categoriasReturn.push( this.arrCategorias[ categoriaExistente ].id )
       }
     } )

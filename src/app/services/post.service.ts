@@ -37,7 +37,6 @@ export class PostService {
     post.categorias = this.categoriasService.addNoFiltered( post.categoriaString )
     delete post.categoriaString
     this.arrPosts.push( post )
-    console.log( this.arrPosts )
     this.id++
   }
 }

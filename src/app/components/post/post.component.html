@@ -2,7 +2,7 @@
     <h1 class="text-center">{{post.titulo}}</h1>
     <figure class="my-5">
         <img [src]="post.imagen" [alt]="post.titulo">
-        <figcaption>{{post.autor}} , {{post.fecha}}</figcaption>
+        <figcaption>{{post.autor}} , {{post.fecha | date:'dd/MM/yyyy' }}</figcaption>
     </figure>
     <p class="mb-5">{{post.texto}}</p>
     <ul>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 
@@ -16,12 +16,25 @@ export class FormComponent implements OnInit {
   ) {
     this.newPost = new FormGroup(
       {
-        titulo: new FormControl( '', [] ),
-        autor: new FormControl( '', [] ),
-        imagen: new FormControl( '', [] ),
-        fecha: new FormControl( '', [] ),
-        categoriaString: new FormControl( '', [] ),
-        texto: new FormControl( '', [] ),
+        titulo: new FormControl( '', [
+          Validators.required
+        ] ),
+        autor: new FormControl( '', [
+          Validators.required,
+          Validators.minLength( 3 )
+        ] ),
+        imagen: new FormControl( '', [
+          Validators.required
+        ] ),
+        fecha: new FormControl( '', [
+          Validators.required
+        ] ),
+        categoriaString: new FormControl( '', [
+          Validators.required
+        ] ),
+        texto: new FormControl( '', [
+          Validators.required
+        ] ),
       }, []
     )
   }

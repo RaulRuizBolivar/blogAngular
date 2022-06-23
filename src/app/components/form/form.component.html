@@ -2,31 +2,31 @@
     <div class="col-8 pt-5">
         <form novalidate [formGroup]="newPost" (ngSubmit)="getDataForm()">
             <div class="mt-3">
-                <label for="titulo">Titulo del Post</label>
-                <input type="text" id="titulo" class="form-control" formControlName="titulo" placeholder="Titulo">
+                <label for="titulo">Titulo del Post:</label>
+                <input type="text" id="titulo" class="miFormulario" formControlName="titulo" placeholder="Titulo">
             </div>
             <div class="mt-3">
-                <label for="autor">Quién escribe</label>
-                <input type="text" id="autor" class="form-control" formControlName="autor" placeholder="Autor">
+                <label for="autor">Quién escribe:</label>
+                <input type="text" id="autor" class="miFormulario" formControlName="autor" placeholder="Autor">
             </div>
             <div class="mt-3">
-                <label for="imagen">Imagen del Post</label>
-                <input type="text" id="imagen" class="form-control" formControlName="imagen"
+                <label for="imagen">Imagen del Post:</label>
+                <input type="text" id="imagen" class="miFormulario" formControlName="imagen"
                     placeholder="Escribe una URL">
             </div>
             <div class="mt-3">
-                <label for="fecha">Fecha del viaje</label>
-                <input type="date" id="fecha" class="form-control" formControlName="fecha"
+                <label for="fecha">Fecha del viaje:</label>
+                <input type="date" id="fecha" class="miFormulario" formControlName="fecha"
                     placeholder="Escribe una URL">
             </div>
             <div class="mt-3">
-                <label for="categoriaString">Categorias</label>
-                <input type="text" id="categoriaString" class="form-control" formControlName="categoriaString"
+                <label for="categoriaString">Categorias:</label>
+                <input type="text" id="categoriaString" class="miFormulario" formControlName="categoriaString"
                     placeholder="Escribe las categorias separadas por comas">
             </div>
             <div class="mt-3">
-                <label for="texto">Cuerpo del Post</label>
-                <textarea id="texto" class="form-control" placeholder="Escribe el post aqui" rows="7"
+                <label for="texto">Cuerpo del Post:</label>
+                <textarea id="texto" class="miFormulario" placeholder="Escribe el post aqui" rows="7"
                     formControlName="texto"></textarea>
             </div>
             <input type="submit" class="btn btn-secondary rounded-0 mt-3 mb-5 col-12" value="Crear Post">

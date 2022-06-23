@@ -6,7 +6,7 @@ import { CategoriasService } from './categorias.service';
 @Injectable( {
   providedIn: 'root'
 } )
-export class PostService {
+export class PostsService {
   private arrPosts: Post[] = []
   private id: number = 3
   constructor (

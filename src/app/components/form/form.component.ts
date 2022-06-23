@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PostService } from 'src/app/services/post.service';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component( {
   selector: 'app-form',
@@ -11,7 +11,7 @@ import { PostService } from 'src/app/services/post.service';
 export class FormComponent implements OnInit {
   newPost: FormGroup
   constructor (
-    private postsService: PostService,
+    private postsService: PostsService,
     private router: Router
   ) {
     this.newPost = new FormGroup(

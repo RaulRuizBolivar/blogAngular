@@ -2,3 +2,6 @@ figure{
     max-width: 60px;
     margin: 0;
 }
+.dropdown-item{
+    text-transform: capitalize;
+}

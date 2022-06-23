@@ -6,7 +6,7 @@ h1 , figcaption, li{
     font-family: var(--fuenteSecundaria) !important;
 }
 figcaption{
-    padding-left: 32px;
+    padding-top: 20px;
 }
 ul li {
     background-image: url('/assets/tagPrincipal.png');
@@ -14,16 +14,18 @@ ul li {
     background-position-y: center;
     background-size: 20px;
     line-height: 30px;
-    padding-left: 20px;
     margin-right: 10px;
+    padding-left: 32px;
 }
-
+span{
+    text-transform: capitalize;
+}
 ul {
     list-style: none;
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    padding-right: 32px;
+    padding: 0;
 }
 p{
     line-height: 2em;

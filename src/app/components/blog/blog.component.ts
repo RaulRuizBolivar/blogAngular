@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/interfaces/post';
-import { CategoriasService } from 'src/app/services/categorias.service';
-import { PostService } from 'src/app/services/post.service';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component( {
   selector: 'app-blog',
@@ -12,16 +11,16 @@ import { PostService } from 'src/app/services/post.service';
 export class BlogComponent implements OnInit {
   posts: Post[] = []
   constructor (
-    private postService: PostService,
+    private postsService: PostsService,
     private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit (): void {
     this.activatedRoute.params.subscribe( params => {
       if ( params[ 'id' ] === '0' || !params[ 'id' ] ) {
-        this.posts = this.postService.getAll()
+        this.posts = this.postsService.getAll()
       } else {
-        this.posts = this.postService.getAllByCategory( params[ 'id' ] )
+        this.posts = this.postsService.getAllByCategory( params[ 'id' ] )
       }
     } )
   }

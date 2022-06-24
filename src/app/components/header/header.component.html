@@ -17,14 +17,15 @@
                         Categorias
                     </a>
                     <ul class="dropdown-menu border-0" aria-labelledby="categorias">
-                        <li *ngFor="let categoria of categorias">
+                        <li *ngFor="let categoria of categorias" routerLinkActive="active">
                             <a role="button" class="dropdown-item ps-4"
                                 [routerLink]="['/categoria' , categoria.id]">{{categoria.titulo}}</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" [routerLink]="['/new-post']">Nuevo Post</a>
+                    <a class="nav-link" routerLinkActive="active" aria-current="page" [routerLink]="['/new-post']">Nuevo
+                        Post</a>
                 </li>
             </ul>
         </div>

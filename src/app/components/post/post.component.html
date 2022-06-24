@@ -7,7 +7,7 @@
     <p class="mb-5">{{post.texto}}</p>
     <ul>
         <li *ngFor="let cat of categorias">
-            <span>{{cat.titulo}}</span>
+            <span [routerLink]="['/categoria', cat.id]">{{cat.titulo}}</span>
         </li>
     </ul>
 </div>

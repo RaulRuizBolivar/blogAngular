@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -24,7 +24,8 @@ export class FormComponent implements OnInit {
           Validators.minLength( 3 )
         ] ),
         imagen: new FormControl( '', [
-          Validators.required
+          Validators.required,
+          this.urlValidator
         ] ),
         fecha: new FormControl( '', [
           Validators.required
@@ -38,7 +39,12 @@ export class FormComponent implements OnInit {
       }, []
     )
   }
-
+  urlValidator ( controlName: AbstractControl ) {
+    const url = controlName.value
+    const regExp = /https?:\/\/(?:www\.)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b)*(\/[\/\d\w\.-]*)*(?:[\?])*(.+)*/gi
+    console.log( url )
+    return ( !regExp.test( url ) ) ? { urlValidator: 'La url no es valida' } : null
+  }
   ngOnInit (): void {
   }
   getDataForm () {

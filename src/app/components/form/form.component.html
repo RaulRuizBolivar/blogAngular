@@ -29,7 +29,8 @@
                 <textarea id="texto" class="miFormulario" placeholder="Escribe el post aqui" rows="7"
                     formControlName="texto"></textarea>
             </div>
-            <input type="submit" class="btn btn-secondary rounded-0 mt-3 mb-5 col-12" value="Crear Post">
+            <input type="submit" class="btn btn-secondary rounded-0 mt-3 mb-5 col-12" [disabled]="!newPost.valid"
+                value="Crear Post">
         </form>
     </div>
 </div>

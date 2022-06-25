@@ -42,7 +42,6 @@ export class FormComponent implements OnInit {
   urlValidator ( controlName: AbstractControl ) {
     const url = controlName.value
     const regExp = /https?:\/\/(?:www\.)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b)*(\/[\/\d\w\.-]*)*(?:[\?])*(.+)*/gi
-    console.log( url )
     return ( !regExp.test( url ) ) ? { urlValidator: 'La url no es valida' } : null
   }
   ngOnInit (): void {
@@ -50,5 +49,15 @@ export class FormComponent implements OnInit {
   getDataForm () {
     this.postsService.addPost( this.newPost.value )
     this.router.navigate( [ '/home' ] )
+  }
+  checkControl ( errorName: string, ...controlName: string[] ): boolean {
+    let tieneError: boolean[] = []
+    controlName.forEach( input => {
+      if ( this.newPost.get( input )?.hasError( errorName ) && this.newPost.get( input )?.touched ) {
+        tieneError.push( false )
+      }
+      tieneError.push( true )
+    } )
+    return ( tieneError.find( input => input === false ) !== undefined ) ? true : false
   }
 }

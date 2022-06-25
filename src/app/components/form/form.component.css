@@ -21,9 +21,25 @@ textarea{
     border-radius: 5px;
     outline: none;
 }
+.miFormulario:focus-visible.ng-valid.ng-touched , .miFormulario[type=date]:focus-visible.ng-valid.ng-touched{
+    border: 2px solid lightgreen;
+}
+.miFormulario:focus-visible.ng-invalid.ng-touched , .miFormulario[type=date]:focus-visible.ng-invalid.ng-touched{
+    border: 2px solid tomato;
+}
 .miFormulario[type=date]{
     color: grey;
 }
 label{
     font-size: .9em;
+}
+input.ng-valid.ng-touched , textarea.ng-valid.ng-touched{
+    border-bottom: 1px solid lightgreen;
+}
+input.ng-invalid.ng-touched ,  textarea.ng-invalid.ng-touched{
+    border-bottom: 1px solid tomato;
+}
+.error{
+    color: tomato;
+    font-size: 12px;
 }

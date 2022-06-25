@@ -13,6 +13,8 @@
                 <label for="imagen">Imagen del Post:</label>
                 <input type="text" id="imagen" class="miFormulario" formControlName="imagen"
                     placeholder="Escribe una URL">
+                <p class="error" *ngIf="checkControl('urlValidator','imagen')">
+                    La url debe ser valida</p>
             </div>
             <div class="mt-3">
                 <label for="fecha">Fecha del viaje:</label>
@@ -29,6 +31,9 @@
                 <textarea id="texto" class="miFormulario" placeholder="Escribe el post aqui" rows="7"
                     formControlName="texto"></textarea>
             </div>
+            <p class="error"
+                *ngIf="checkControl('required','titulo','autor','imagen','fecha','categoriasString','texto')">
+                Todos los campos son obligatorios</p>
             <input type="submit" class="btn btn-secondary rounded-0 mt-3 mb-5 col-12" [disabled]="!newPost.valid"
                 value="Crear Post">
         </form>

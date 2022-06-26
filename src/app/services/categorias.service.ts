@@ -7,7 +7,7 @@ import { Category } from '../interfaces/category';
 } )
 export class CategoriasService {
   private arrCategorias: Category[] = []
-  private id: number = 3
+  private id: number = 7
   constructor () {
     this.arrCategorias = CATEGORIAS
   }

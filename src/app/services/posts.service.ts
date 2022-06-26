@@ -8,7 +8,7 @@ import { CategoriasService } from './categorias.service';
 } )
 export class PostsService {
   private arrPosts: Post[] = []
-  private id: number = 3
+  private id: number = 12
   constructor (
     private categoriasService: CategoriasService
   ) {

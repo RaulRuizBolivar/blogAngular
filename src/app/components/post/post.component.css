@@ -1,0 +1,33 @@
+h1{
+    font-size: 4em;
+    font-weight: 700;
+}
+h1 , figcaption, li{
+    font-family: var(--fuenteSecundaria) !important;
+}
+figcaption{
+    padding-top: 20px;
+}
+ul li {
+    background-image: url('/assets/tagPrincipal.png');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: 20px;
+    line-height: 30px;
+    margin-right: 10px;
+    padding-left: 32px;
+}
+span{
+    text-transform: capitalize;
+    cursor: pointer;
+}
+ul {
+    list-style: none;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+p{
+    line-height: 2em;
+}

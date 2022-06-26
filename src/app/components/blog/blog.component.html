@@ -1,14 +1,5 @@
 <div class="row mt-5">
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
-    <app-card class="col-12 col-md-6 col-lg-4"></app-card>
+    <article class="col-12 col-md-6 col-lg-4" *ngFor="let post of posts">
+        <app-card [post]="post"></app-card>
+    </article>
 </div>

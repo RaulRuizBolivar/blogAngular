@@ -1,0 +1,13 @@
+<div class="mt-5">
+    <h1 class="text-center">{{post.titulo}}</h1>
+    <figure class="my-5">
+        <img [src]="post.imagen" [alt]="post.titulo">
+        <figcaption>{{post.autor}} , {{post.fecha | date:'dd/MM/yyyy' }}</figcaption>
+    </figure>
+    <p class="mb-5">{{post.texto}}</p>
+    <ul>
+        <li *ngFor="let cat of categorias">
+            <span [routerLink]="['/categoria', cat.id]">{{cat.titulo}}</span>
+        </li>
+    </ul>
+</div>

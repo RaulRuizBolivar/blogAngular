@@ -7,5 +7,5 @@ export interface Post {
     autor: string
     imagen: string
     fecha: string
-    categoria: Category
+    categorias: number[]
 }
